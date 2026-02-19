@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 50px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 400px;
+            margin-right: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #thankyou {
+            display: none;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .answers {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 400px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .answer-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .answer-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Анкета</h1>
+        <form id="surveyForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Возраст:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="color">Любимый цвет:</label>
+            <select id="color" name="color" required>
+                <option value="">Выберите...</option>
+                <option value="Красный">Красный</option>
+                <option value="Синий">Синий</option>
+                <option value="Зелёный">Зелёный</option>
+                <option value="Жёлтый">Жёлтый</option>
+                <option value="Фиолетовый">Фиолетовый</option>
+            </select>
+
+            <label for="music">Любимая музыка:</label>
+            <input type="text" id="music" name="music">
+
+            <label for="comment">Комментарий:</label>
+            <textarea id="comment" name="comment" rows="3"></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+        <div id="thankyou">Спасибо за заполнение анкеты!</div>
+    </div>
+
+    <div class="answers">
+        <h2>Ответы пользователей:</h2>
+        <div id="answersList"></div>
+    </div>
+
+    <script src="saip.js"></script>
+</body>
+</html>
